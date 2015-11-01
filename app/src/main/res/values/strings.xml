@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HeroDB</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="world">
+        <item>Марвел</item>
+        <item>Звездные войны</item>
+        <item>Бэтмен</item>
+        <item>DC COMICS</item>
+    </string-array>
+</resources>
+
