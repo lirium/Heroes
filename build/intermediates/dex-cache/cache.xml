@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="D:\Dropbox\java\HeroDB\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="D:\Dropbox\java\HeroDB\app\build\intermediates\pre-dexed\debug\classes-849ab56c5f0ec9f0c29725873964f316528566da.jar" />
-    </item>
-    <item
-        jar="D:\Dropbox\java\HeroDB\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="D:\Dropbox\java\HeroDB\app\build\intermediates\pre-dexed\debug\classes-4d70ee135e726e6b9df2b15e0ce62b0806ed832e.jar" />
-    </item>
-    <item
-        jar="D:\Dropbox\java\HeroDB\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="D:\Dropbox\java\HeroDB\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-f867abc6acd4a8c8daa6f4e0c0e534dc7df456c6.jar" />
-    </item>
-    <item
-        jar="C:\Users\Alexk\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jar="C:\Users\skynet\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="D:\Dropbox\java\HeroDB\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-eaa2d40c4277128bc301779ce0cb50e927a76b95.jar" />
+        <dex dex="C:\Users\skynet\Dropbox\java\HeroDB\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-a76cf221a7abb5eb94b04c95cd60b16278df3399.jar" />
     </item>
     <item
-        jar="D:\Dropbox\java\HeroDB\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jar="C:\Users\skynet\Dropbox\java\HeroDB\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="D:\Dropbox\java\HeroDB\app\build\intermediates\pre-dexed\debug\classes-38c245a6bc8b34e85dcd24d8b0153469d437e117.jar" />
+        <dex dex="C:\Users\skynet\Dropbox\java\HeroDB\app\build\intermediates\pre-dexed\debug\classes-672635e3535a9c32512ca81c4b47e56735c1e785.jar" />
+    </item>
+    <item
+        jar="C:\Users\skynet\Dropbox\java\HeroDB\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\skynet\Dropbox\java\HeroDB\app\build\intermediates\pre-dexed\debug\classes-b50995c515de07bf18435189dcf25aed075de459.jar" />
+    </item>
+    <item
+        jar="C:\Users\skynet\Dropbox\java\HeroDB\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\skynet\Dropbox\java\HeroDB\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-3da23a3e284b0aa16db810fc746345846efa6248.jar" />
+    </item>
+    <item
+        jar="C:\Users\skynet\Dropbox\java\HeroDB\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="C:\Users\skynet\Dropbox\java\HeroDB\app\build\intermediates\pre-dexed\debug\classes-cd62320dadeefa06db61b8dcb3bede62a1ca43eb.jar" />
     </item>
 
 </items>
