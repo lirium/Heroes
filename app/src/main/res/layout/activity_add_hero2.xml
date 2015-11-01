@@ -35,7 +35,8 @@
             android:text="Загрузить аватар"
             android:id="@+id/buttonAddAvatar"
             android:layout_gravity="center_horizontal"
-            android:onClick="addAvatarButton"/>
+            android:onClick="addAvatarButton"
+            android:paddingTop="16dp"/>
 
         <LinearLayout
             android:orientation="vertical"
@@ -132,10 +133,10 @@
                     android:textAlignment="center" />
 
                 <Spinner
-                    android:id="@+id/spinnerWorld"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:entries="@array/world" />
+                android:id="@+id/spinnerWorld"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/world" />
 
             </LinearLayout>
             <Button

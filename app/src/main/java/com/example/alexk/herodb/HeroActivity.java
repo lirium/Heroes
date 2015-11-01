@@ -40,7 +40,7 @@ public class HeroActivity extends AppCompatActivity {
 
         heroDb = new HeroDB(this);
         Log.d("tesing --- ", heroDb.getHero(idHero).getName());
-        heroDb.deleteHero(heroDb.getHero(idHero));
+        //heroDb.deleteHero(heroDb.getHero(idHero));
         Log.d("test id--", String.valueOf(idHero));
 //    db
 
