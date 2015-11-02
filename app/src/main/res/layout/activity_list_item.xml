@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Имя: " />
+                android:text="@string/name" />
 
             <TextView
                 android:id="@+id/tvName"
@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="О герое: " />
+                android:text="@string/about" />
 
             <TextView
                 android:id="@+id/tvAboutInfo"
@@ -54,7 +54,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Из мира:  " />
+                android:text="@string/world" />
 
             <TextView
                 android:id="@+id/tvWorld"

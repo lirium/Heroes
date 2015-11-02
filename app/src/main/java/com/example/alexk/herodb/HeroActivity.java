@@ -43,11 +43,16 @@ public class HeroActivity extends AppCompatActivity {
         heroDb.deleteHero(hero);
         Intent intent = new Intent(HeroActivity.this, MainActivity.class);
         startActivity(intent);
-//        Log.d("tesing --- ", heroDb.getHero(idHero).getName());
-//        //heroDb.deleteHero(heroDb.getHero(idHero));
-//        Log.d("test id--", String.valueOf(idHero));
-//    db
+        heroDb.close();
+    }
 
+    public void buttonRedactHero(View v) {
+        heroDb = new HeroDB(this);
+        hero = heroDb.getHero(idHero);
+        heroDb.deleteHero(hero);
+        Intent intent = new Intent(HeroActivity.this, MainActivity.class);
+        startActivity(intent);
+        heroDb.close();
     }
 
 }

@@ -32,7 +32,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Загрузить аватар"
+            android:text="@string/download_avatar"
             android:id="@+id/buttonAddAvatar"
             android:layout_gravity="center_horizontal"
             android:onClick="addAvatarButton"/>
@@ -62,7 +62,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="38dp"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Имя"
+                        android:text="@string/name"
                         android:id="@+id/textView2" />
 
                     <EditText
@@ -83,7 +83,7 @@
                         android:layout_width="131dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Реальное имя"
+                        android:text="@string/rname"
                         android:id="@+id/textView8" />
 
                     <EditText
@@ -105,7 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Описание"
+                    android:text="@string/about"
                     android:id="@+id/textView3"
                     android:layout_gravity="center_horizontal" />
 
@@ -126,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="52dp"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Выбор вселенной"
+                    android:text="@string/select_world"
                     android:id="@+id/textView"
                     android:textSize="@dimen/design_snackbar_text_size"
                     android:textAlignment="center" />

@@ -29,17 +29,17 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Изменить героя"
+                android:text="@string/change_hero"
                 android:id="@+id/buttonRedactHero"
                 android:nestedScrollingEnabled="false"
-                android:onClick="addHeroButton"
+                android:onClick="buttonRedactHero"
                 android:visibility="visible" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Удалить героя"
+                android:text="@string/del_hero"
                 android:id="@+id/buttonDelHero"
                 android:nestedScrollingEnabled="false"
                 android:onClick="onClickButtonDel"
@@ -68,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="38dp"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Имя  "
+                    android:text="@string/name"
                     android:id="@+id/textView2"
                     android:layout_gravity="center_horizontal" />
 
@@ -77,29 +77,30 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="name"
-                    android:id="@+id/tvName"
-                    android:layout_gravity="center_horizontal" />
+                    android:id="@+id/tvName" />
             </LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="25dp">
+                android:layout_height="25dp"
+                android:weightSum="1">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Настоящее имя  "
+                    android:text="@string/rname"
                     android:id="@+id/textView5"
                     android:layout_gravity="center_horizontal" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="RealName"
-                    android:id="@+id/tvRealName" />
+                    android:id="@+id/tvRealName"
+                    android:layout_weight="0.53" />
             </LinearLayout>
 
             <LinearLayout
@@ -126,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Описание:  "
+                android:text="@string/about"
                 android:id="@+id/textView7" />
 
             <TextView
