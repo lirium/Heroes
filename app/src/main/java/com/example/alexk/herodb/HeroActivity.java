@@ -3,7 +3,6 @@ package com.example.alexk.herodb;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +11,7 @@ import android.widget.TextView;
 public class HeroActivity extends AppCompatActivity {
     public int idHero;
     private HeroDB heroDb;
+    private Hero hero;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,18 +30,21 @@ public class HeroActivity extends AppCompatActivity {
         tvWorld.setText(getIntent().getExtras().getString("HeroWorld"));
 
         ivAvatar.setImageURI(Uri.parse(getIntent().getExtras().getString("HeroAvatar")));
-        idHero=(getIntent().getExtras().getInt("Id"));
+        idHero=(getIntent().getExtras().getInt("HeroObject"));
     }
 
 
     public void onClickButtonDel (View v) {
-//        Intent intent = new Intent(HeroActivity.this, MainActivity.class);
-//        startActivity(intent);
 
+//
         heroDb = new HeroDB(this);
-        Log.d("tesing --- ", heroDb.getHero(idHero).getName());
-        //heroDb.deleteHero(heroDb.getHero(idHero));
-        Log.d("test id--", String.valueOf(idHero));
+        hero = heroDb.getHero(idHero);
+      //  heroDb.deleteHero(hero);
+       // Intent intent = new Intent(HeroActivity.this, MainActivity.class);
+        //startActivity(intent);
+//        Log.d("tesing --- ", heroDb.getHero(idHero).getName());
+//        //heroDb.deleteHero(heroDb.getHero(idHero));
+//        Log.d("test id--", String.valueOf(idHero));
 //    db
 
     }
