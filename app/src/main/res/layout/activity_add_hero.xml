@@ -49,14 +49,14 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="38dp"
+                        android:layout_height="match_parent"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/name"
                         android:id="@+id/textView2" />
 
                     <EditText
                         android:layout_width="294dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:inputType="textPersonName"
                         android:ems="10"
                         android:id="@+id/inputName"

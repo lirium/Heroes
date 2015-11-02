@@ -47,11 +47,9 @@ public class HeroActivity extends AppCompatActivity {
     }
 
     public void buttonRedactHero(View v) {
-        heroDb = new HeroDB(this);
-        hero = heroDb.getHero(idHero);
-        heroDb.deleteHero(hero);
-        Intent intent = new Intent(HeroActivity.this, MainActivity.class);
-        startActivity(intent);
+        Intent intentRedact = new Intent(HeroActivity.this, AddHeroActivity.class);
+        intentRedact.putExtra("HeroObject", idHero);
+        startActivity(intentRedact);
         heroDb.close();
     }
 
