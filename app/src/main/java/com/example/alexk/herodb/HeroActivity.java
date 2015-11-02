@@ -1,5 +1,6 @@
 package com.example.alexk.herodb;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -40,8 +41,8 @@ public class HeroActivity extends AppCompatActivity {
         heroDb = new HeroDB(this);
         hero = heroDb.getHero(idHero);
         heroDb.deleteHero(hero);
-       // Intent intent = new Intent(HeroActivity.this, MainActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(HeroActivity.this, MainActivity.class);
+        startActivity(intent);
 //        Log.d("tesing --- ", heroDb.getHero(idHero).getName());
 //        //heroDb.deleteHero(heroDb.getHero(idHero));
 //        Log.d("test id--", String.valueOf(idHero));

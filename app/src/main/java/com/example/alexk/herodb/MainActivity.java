@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             intentHero.putExtra("HeroAboutInfo", heroes.get(position).getAboutInfo());
             intentHero.putExtra("HeroWorld", heroes.get(position).getWorld());
             intentHero.putExtra("HeroAvatar", heroes.get(position).getPhotoFile());
-            intentHero.putExtra("HeroObject", position);
+            intentHero.putExtra("HeroObject", heroes.get(position).getID());
 
             startActivity(intentHero);
 
