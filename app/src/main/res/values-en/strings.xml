@@ -10,7 +10,7 @@
         <string name="change_hero">Edit hero</string>
         <string name="del_hero">Delete hero</string>
         <string name="add_hero">New hero</string>
-    <string name="world">Мир :</string>
+    <string name="world">World :</string>
 
 
     <string-array name="world">

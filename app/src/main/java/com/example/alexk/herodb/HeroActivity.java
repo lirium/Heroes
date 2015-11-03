@@ -47,10 +47,10 @@ public class HeroActivity extends AppCompatActivity {
     }
 
     public void buttonRedactHero(View v) {
-        Intent intentRedact = new Intent(HeroActivity.this, AddHeroActivity.class);
+        Intent intentRedact = new Intent(HeroActivity.this, EditHero.class);
         intentRedact.putExtra("HeroObject", idHero);
         startActivity(intentRedact);
-        heroDb.close();
+     //   heroDb.close();
     }
 
 }

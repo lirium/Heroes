@@ -32,7 +32,7 @@ public class AddHeroActivity extends AppCompatActivity {
         Intent intent = new Intent(AddHeroActivity.this, MainActivity.class);
         startActivity(intent);
     }
-
+///Integer.toString(heroWorld..getSelectedItemPosition())
     public void addAvatarButton(View v){
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
@@ -43,7 +43,7 @@ public class AddHeroActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 
-      ImageView myImageView = (ImageView) findViewById(R.id.ImageViewAvatar);
+      ImageView myImageView = (ImageView) findViewById(R.id.ivPhoto);
       selectedImage = imageReturnedIntent.getData();
       myImageView.setImageURI(selectedImage);
 

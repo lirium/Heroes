@@ -5,38 +5,26 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     android:paddingBottom="0dp"
-    tools:context="com.example.alexk.herodb.AddHeroActivity">
+    tools:context="com.example.alexk.herodb.AddHeroActivity2">
 
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/ivPhoto"
+        android:layout_gravity="center_horizontal"
+        android:elevation="15dp"
+        android:scaleType="centerCrop"
+        android:background="#d2d2d2"
+        android:onClick="addAvatarButton" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_below="@+id/ivPhoto">
 
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:id="@+id/ImageViewAvatar"
-            android:layout_gravity="center_horizontal"
-            android:elevation="8dp"
-            android:scaleType="fitStart"/>
-
-
-
-
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Загрузить аватар"
-            android:id="@+id/buttonAddAvatar"
-            android:layout_gravity="center_horizontal"
-            android:onClick="addAvatarButton"
-            android:paddingTop="16dp"/>
 
         <LinearLayout
             android:orientation="vertical"
@@ -61,14 +49,14 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="38dp"
+                        android:layout_height="match_parent"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Имя"
+                        android:text="@string/name"
                         android:id="@+id/textView2" />
 
                     <EditText
                         android:layout_width="294dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:inputType="textPersonName"
                         android:ems="10"
                         android:id="@+id/inputName"
@@ -84,7 +72,7 @@
                         android:layout_width="131dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Реальное имя"
+                        android:text="@string/rname"
                         android:id="@+id/textView8" />
 
                     <EditText
@@ -106,7 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Описание"
+                    android:text="@string/about"
                     android:id="@+id/textView3"
                     android:layout_gravity="center_horizontal" />
 
@@ -127,28 +115,30 @@
                     android:layout_width="wrap_content"
                     android:layout_height="52dp"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Выбор вселенной"
+                    android:text="@string/select_world"
                     android:id="@+id/textView"
                     android:textSize="@dimen/design_snackbar_text_size"
                     android:textAlignment="center" />
 
                 <Spinner
-                android:id="@+id/spinnerWorld"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/world" />
+                    android:id="@+id/spinnerWorld"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/world"
+                    android:spinnerMode="dropdown" />
 
             </LinearLayout>
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="37dp"
-                android:text="Добавить героя"
-                android:id="@+id/addHeroButton"
+                android:text="Обновить героя"
+                android:id="@+id/updateHeroButton"
                 android:layout_gravity="center_horizontal"
                 android:nestedScrollingEnabled="false"
-                android:onClick="addHeroButton" />
+                android:onClick="updateHeroButton" />
         </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

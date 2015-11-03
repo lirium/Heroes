@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:id="@+id/ImageViewAvatar"
+        android:id="@+id/ivPhoto"
         android:layout_gravity="center_horizontal"
         android:elevation="15dp"
         android:scaleType="centerCrop"
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1"
-        android:layout_below="@+id/ImageViewAvatar">
+        android:layout_below="@+id/ivPhoto">
 
 
         <LinearLayout
