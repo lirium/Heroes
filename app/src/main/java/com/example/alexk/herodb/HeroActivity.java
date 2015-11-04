@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +19,8 @@ public class HeroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hero);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
         TextView textViewName = (TextView) findViewById(R.id.tvName);
         TextView textViewRealName = (TextView) findViewById(R.id.tvRealName);
@@ -35,7 +39,7 @@ public class HeroActivity extends AppCompatActivity {
     }
 
 
-    public void onClickButtonDel (View v) {
+    public void delHero () {
 
 //
         heroDb = new HeroDB(this);
@@ -46,11 +50,40 @@ public class HeroActivity extends AppCompatActivity {
         heroDb.close();
     }
 
-    public void buttonRedactHero(View v) {
+    public void editHero() {
         Intent intentRedact = new Intent(HeroActivity.this, EditHero.class);
         intentRedact.putExtra("HeroObject", idHero);
         startActivity(intentRedact);
      //   heroDb.close();
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_hero, menu);
+        return true;
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+
+        if (id == R.id.action_edit) {
+            editHero();
+        }
+        if (id == R.id.action_del) {
+            delHero();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }

@@ -1,143 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="0dp"
-    android:paddingRight="0dp"
-    android:paddingTop="0dp"
+    android:layout_height="match_parent"
     android:paddingBottom="0dp"
     tools:context="com.example.alexk.herodb.AddHeroActivity">
 
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/ivPhoto"
-        android:layout_gravity="center_horizontal"
-        android:elevation="15dp"
-        android:scaleType="centerCrop"
-        android:background="#d2d2d2"
-        android:onClick="addAvatarButton" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1"
-        android:layout_below="@+id/ivPhoto">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp">
 
+        <android.support.v7.widget.Toolbar
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"/>
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/ivPhoto"
+            android:layout_gravity="center_horizontal"
+            android:elevation="15dp"
+            android:scaleType="centerCrop"
+            android:background="#d2d2d2"
+            android:onClick="addAvatarButton" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:weightSum="1"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp">
+            android:weightSum="1">
+
+
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/name"
+                            android:id="@+id/textView2"/>
+
+                        <EditText
+                            android:layout_width="294dp"
+                            android:layout_height="match_parent"
+                            android:ems="10"
+                            android:id="@+id/tvName"
+                            android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="39dp">
+
+                        <TextView
+                            android:layout_width="131dp"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/rname"
+                            android:id="@+id/textView8" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tvRealName"
+                            android:layout_weight="1" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@string/name"
-                        android:id="@+id/textView2" />
-
-                    <EditText
-                        android:layout_width="294dp"
-                        android:layout_height="match_parent"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/inputName"
+                        android:text="@string/about"
+                        android:id="@+id/textView3"
                         android:layout_gravity="center_horizontal" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="66dp"
+                        android:id="@+id/tvAboutInfo"
+                        android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="39dp">
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
 
                     <TextView
-                        android:layout_width="131dp"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@string/rname"
-                        android:id="@+id/textView8" />
-
-                    <EditText
                         android:layout_width="wrap_content"
+                        android:layout_height="52dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/select_world"
+                        android:id="@+id/textView"
+                        android:textSize="@dimen/design_snackbar_text_size"
+                        android:textAlignment="center"
+                        android:paddingRight="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerWorld"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/inputRealName"
-                        android:layout_weight="1" />
+                        android:entries="@array/world" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="90dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/about"
-                    android:id="@+id/textView3"
-                    android:layout_gravity="center_horizontal" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="66dp"
-                    android:id="@+id/inputAbout"
-                    android:layout_gravity="center_horizontal" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="52dp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/select_world"
-                    android:id="@+id/textView"
-                    android:textSize="@dimen/design_snackbar_text_size"
-                    android:textAlignment="center" />
-
-                <Spinner
-                    android:id="@+id/spinnerWorld"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:entries="@array/world" />
-
-            </LinearLayout>
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:text="Добавить героя"
-                android:id="@+id/addHeroButton"
-                android:layout_gravity="center_horizontal"
-                android:nestedScrollingEnabled="false"
-                android:onClick="addHeroButton" />
         </LinearLayout>
 
     </LinearLayout>
-
 </RelativeLayout>
