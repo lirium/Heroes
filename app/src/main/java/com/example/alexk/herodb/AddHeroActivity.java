@@ -50,8 +50,15 @@ public class AddHeroActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 
       ImageView myImageView = (ImageView) findViewById(R.id.ivPhoto);
-      selectedImage = imageReturnedIntent.getData();
-      myImageView.setImageURI(selectedImage);
+        try {
+            selectedImage = imageReturnedIntent.getData();
+            myImageView.setImageURI(selectedImage);
+        } catch (NullPointerException e) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Необходимо выбрать изображение", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+
     }
 
 
