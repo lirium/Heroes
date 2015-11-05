@@ -33,13 +33,12 @@ public class HeroActivity extends AppCompatActivity {
         textViewRealName.setText(getIntent().getExtras().getString("HeroRealName"));
         tvAboutInfo.setText(getIntent().getExtras().getString("HeroAboutInfo"));
         tvWorld.setText(getIntent().getExtras().getString("HeroWorld"));
-
         ivAvatar.setImageURI(Uri.parse(getIntent().getExtras().getString("HeroAvatar")));
         idHero=(getIntent().getExtras().getInt("HeroObject"));
     }
 
 
-    public void delHero () {
+    public void deleteHero() {
 
 //
         heroDb = new HeroDB(this);
@@ -79,11 +78,16 @@ public class HeroActivity extends AppCompatActivity {
             editHero();
         }
         if (id == R.id.action_del) {
-            delHero();
+            deleteHero();
+            goToMainActivity();
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    private void goToMainActivity() {
+        Intent intent = new Intent(HeroActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 
 }

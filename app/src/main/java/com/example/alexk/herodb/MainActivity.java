@@ -50,15 +50,12 @@ public class MainActivity extends AppCompatActivity {
         heroes = db.getAllHero();
         ArrayAdapter adapter = new ImageAdapter(this, heroes);
         lvHeroes.setAdapter(adapter);
-
         lvHeroes.setOnItemClickListener(new DrawerItemClickListener());
     }
 
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
 
-
-        //клик по списку
         @Override
         public void onItemClick(AdapterView<?> parent, View itemClicked, int position, long id) {
             Intent intentHero = new Intent(MainActivity.this, HeroActivity.class);
@@ -99,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (id == R.id.action_search) {
             Toast toast = Toast.makeText(getApplicationContext(),
-                    "Данный функционал временно отсутствует", Toast.LENGTH_SHORT);
+                    R.string.toast_search, Toast.LENGTH_SHORT);
             toast.show();
         }
 

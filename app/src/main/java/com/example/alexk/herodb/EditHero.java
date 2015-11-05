@@ -62,34 +62,45 @@ public class EditHero extends AppCompatActivity{
         hero.setName(heroName.getText().toString());
         hero.setRealName(heroRealName.getText().toString());
         hero.setAboutInfo(heroAbout.getText().toString());
-        try {
-            hero.setPhotoFile(selectedImage.toString());
-        } catch (NullPointerException e) {
-            hero.setPhotoFile(Uri.parse(hero.getPhotoFile()).toString());
-        }
-        hero.setWorld(heroWorld.getSelectedItem().toString());
-        Intent intent = new Intent(EditHero.this, MainActivity.class);
-        startActivity(intent);
-        heroDb.updateHero(hero);
-        heroDb.close();
-    }
 
-    public void addAvatarButton(View v){
-        Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-        photoPickerIntent.setType("image/*");
-        startActivityForResult(photoPickerIntent, GALLERY_REQUEST);
+            try {
+                hero.setPhotoFile(selectedImage.toString());
+            } catch (NullPointerException e) {
+                hero.setPhotoFile(Uri.parse(hero.getPhotoFile()).toString());
+            }
+
+        hero.setWorld(heroWorld.getSelectedItem().toString());
+
+            if (hero.getName() != null & hero.getRealName() != null & hero.getAboutInfo() != null) {
+                heroDb.updateHero(hero);
+                heroDb.close();
+            } else {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        R.string.toast_nodata, Toast.LENGTH_SHORT);
+                toast.show();
+            }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
-        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
+       super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 
-       selectedImage = imageReturnedIntent.getData();
-       heroAvatar.setImageURI(selectedImage);
 
+        try {
+            selectedImage = imageReturnedIntent.getData();
+            heroAvatar.setImageURI(selectedImage);
+        } catch (NullPointerException e) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    R.string.toast_selectimage, Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
-
+    public void addAvatar(View v){
+        Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+        photoPickerIntent.setType("image/*");
+        startActivityForResult(photoPickerIntent, GALLERY_REQUEST);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -108,18 +119,16 @@ public class EditHero extends AppCompatActivity{
         int id = item.getItemId();
 
         if (id == R.id.action_ok) {
-            try {
-                updateHero();
-            } catch (NullPointerException e) {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Заполнены не все данные", Toast.LENGTH_SHORT);
-                toast.show();
-            }
+            updateHero();
+            goToMainActivity();
         }
         return super.onOptionsItemSelected(item);
     }
 
-
+    private void goToMainActivity() {
+        Intent intent = new Intent(EditHero.this, MainActivity.class);
+        startActivity(intent);
+    }
 
 
 

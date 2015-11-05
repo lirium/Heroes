@@ -28,18 +28,32 @@ public class AddHeroActivity extends AppCompatActivity {
 
     }
 
+    private void goToMainActivity() {
+        Intent intent = new Intent(AddHeroActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+
     public void addHero() {
         HeroDB db = new HeroDB(this);//
         EditText heroName = (EditText) findViewById(R.id.tvName);
         EditText heroRealName = (EditText) findViewById(R.id.tvRealName);
         EditText heroAbout = (EditText) findViewById(R.id.tvAboutInfo);
         Spinner heroWorld = (Spinner) findViewById(R.id.spinnerWorld);
-        db.addHero(new Hero(heroName.getText().toString(), heroRealName.getText().toString(), heroAbout.getText().toString(),heroWorld.getSelectedItem().toString(), selectedImage.toString()));
-        Intent intent = new Intent(AddHeroActivity.this, MainActivity.class);
-        startActivity(intent);
+
+        if (heroName.getText().toString().length()>0 & heroRealName.toString().length()>0 & heroAbout.toString().length()>0 & selectedImage!= null){
+             db.addHero(new Hero(heroName.getText().toString(),
+                     heroRealName.getText().toString(),
+                     heroAbout.getText().toString(),
+                     heroWorld.getSelectedItem().toString(),
+                     selectedImage.toString()));
+        } else {
+             Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_nodata, Toast.LENGTH_SHORT);
+             toast.show();
+        }
     }
 
-    public void addAvatarButton(View v){
+    public void addAvatar(View v){
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
         startActivityForResult(photoPickerIntent, GALLERY_REQUEST);
@@ -55,7 +69,7 @@ public class AddHeroActivity extends AppCompatActivity {
             myImageView.setImageURI(selectedImage);
         } catch (NullPointerException e) {
             Toast toast = Toast.makeText(getApplicationContext(),
-                    "Необходимо выбрать изображение", Toast.LENGTH_SHORT);
+                    R.string.toast_selectimage, Toast.LENGTH_SHORT);
             toast.show();
         }
 
@@ -79,13 +93,8 @@ public class AddHeroActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_ok) {
-            try {
                 addHero();
-            } catch (NullPointerException e) {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Заполнены не все данные", Toast.LENGTH_SHORT);
-                toast.show();
-            }
+                goToMainActivity();
         }
             return super.onOptionsItemSelected(item);
     }

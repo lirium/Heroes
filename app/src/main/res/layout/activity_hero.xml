@@ -73,7 +73,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/name"
-                        android:id="@+id/textView2"/>
+                        android:id="@+id/tvTitleName"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -96,7 +96,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/rname"
-                        android:id="@+id/textView8" />
+                        android:id="@+id/tvTitleRealName" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -119,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/about"
-                    android:id="@+id/textView3" />
+                    android:id="@+id/tvAboutInfo" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -141,7 +141,7 @@
                     android:layout_height="29dp"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/world"
-                    android:id="@+id/textView"
+                    android:id="@+id/tvTitleUniverse"
                     android:textAlignment="center"
                     android:paddingRight="8dp"/>
 

@@ -38,7 +38,7 @@
             android:elevation="15dp"
             android:scaleType="centerCrop"
             android:background="#d2d2d2"
-            android:onClick="addAvatarButton" />
+            android:onClick="addAvatar" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -74,7 +74,7 @@
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:text="@string/name"
-                            android:id="@+id/textView2"/>
+                            android:id="@+id/tvTitleName"/>
 
                         <EditText
                             android:layout_width="match_parent"
@@ -95,7 +95,7 @@
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:text="@string/rname"
-                            android:id="@+id/textView8" />
+                            android:id="@+id/tvTitleRealName" />
 
                         <EditText
                             android:layout_width="match_parent"
@@ -117,7 +117,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/about"
-                        android:id="@+id/textView3" />
+                        android:id="@+id/tvTitleAboutHero" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -138,7 +138,7 @@
                         android:layout_height="29dp"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/world"
-                        android:id="@+id/textView"
+                        android:id="@+id/tvTitleUniverse"
                         android:textAlignment="center"
                         android:paddingRight="8dp"/>
                     <Spinner
