@@ -18,6 +18,7 @@ public class AddHeroActivity extends AppCompatActivity {
 
     static final int GALLERY_REQUEST = 1;
     Uri selectedImage;
+    boolean addComplite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,23 +36,38 @@ public class AddHeroActivity extends AppCompatActivity {
 
 
     public void addHero() {
-        HeroDB db = new HeroDB(this);//
+        HeroDB db = new HeroDB(this);
         EditText heroName = (EditText) findViewById(R.id.tvName);
         EditText heroRealName = (EditText) findViewById(R.id.tvRealName);
         EditText heroAbout = (EditText) findViewById(R.id.tvAboutInfo);
         Spinner heroWorld = (Spinner) findViewById(R.id.spinnerWorld);
 
-        if (heroName.getText().toString().length()>0 & heroRealName.toString().length()>0 & heroAbout.toString().length()>0 & selectedImage!= null){
+
+        if (isValid(heroName,heroRealName,heroAbout,selectedImage)){
              db.addHero(new Hero(heroName.getText().toString(),
                      heroRealName.getText().toString(),
                      heroAbout.getText().toString(),
                      heroWorld.getSelectedItem().toString(),
                      selectedImage.toString()));
+             addComplite=true;
         } else {
-             Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_nodata, Toast.LENGTH_SHORT);
-             toast.show();
+            addComplite=false;
+            Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_nodata, Toast.LENGTH_SHORT);
+            toast.show();
+
         }
     }
+
+    public boolean isValid(EditText heroName, EditText heroRealName, EditText heroAbout, Uri selectedImage) {
+
+        if (heroName.getText().toString().length()>0 && heroRealName.toString().length()>0 && heroAbout.toString().length()>0 && selectedImage!= null){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 
     public void addAvatar(View v){
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
@@ -63,10 +79,10 @@ public class AddHeroActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 
-      ImageView myImageView = (ImageView) findViewById(R.id.ivPhoto);
+      ImageView heroAvatar = (ImageView) findViewById(R.id.ivPhoto);
         try {
             selectedImage = imageReturnedIntent.getData();
-            myImageView.setImageURI(selectedImage);
+            heroAvatar.setImageURI(selectedImage);
         } catch (NullPointerException e) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     R.string.toast_selectimage, Toast.LENGTH_SHORT);
@@ -75,15 +91,12 @@ public class AddHeroActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_add_hero, menu);
         return true;
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -93,8 +106,11 @@ public class AddHeroActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_ok) {
-                addHero();
+            addHero();
+
+            if (addComplite) {
                 goToMainActivity();
+            }
         }
             return super.onOptionsItemSelected(item);
     }

@@ -26,6 +26,7 @@ public class EditHero extends AppCompatActivity{
     EditText heroRealName;
     EditText heroAbout;
     Spinner heroWorld;
+    boolean editComplite;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,14 +72,24 @@ public class EditHero extends AppCompatActivity{
 
         hero.setWorld(heroWorld.getSelectedItem().toString());
 
-            if (hero.getName() != null & hero.getRealName() != null & hero.getAboutInfo() != null) {
-                heroDb.updateHero(hero);
-                heroDb.close();
-            } else {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        R.string.toast_nodata, Toast.LENGTH_SHORT);
-                toast.show();
-            }
+        if (isValid(heroName,heroRealName,heroAbout)) {
+            heroDb.updateHero(hero);
+            editComplite=true;
+        } else {
+            editComplite=false;
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    R.string.toast_nodata, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
+
+    public boolean isValid(EditText heroName, EditText heroRealName, EditText heroAbout) {
+
+        if (heroName.getText().toString().length()>0 && heroRealName.toString().length()>0 && heroAbout.toString().length()>0){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -120,7 +131,9 @@ public class EditHero extends AppCompatActivity{
 
         if (id == R.id.action_ok) {
             updateHero();
-            goToMainActivity();
+            if (editComplite) {
+                goToMainActivity();
+            }
         }
         return super.onOptionsItemSelected(item);
     }

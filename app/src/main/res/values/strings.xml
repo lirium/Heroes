@@ -3,16 +3,16 @@
     <string name="action_settings">Настройки</string>
 
     <string name="download_avatar">Загрузить аватар</string>
-    <string name="name">Имя :</string>
+    <string name="name">Имя:</string>
     <string name="rname">Реальное имя :</string>
-    <string name="about">О герое :</string>
+    <string name="about">О герое:</string>
     <string name="select_world">Выбрерите мир </string>
     <string name="change_hero">Изменить героя</string>
     <string name="del_hero">Удалить героя</string>
     <string name="add_hero">Добавить героя</string>
     <string name="HeroDB">app_name</string>
     <string name="Settings">Настройки</string>
-    <string name="world">Мир :</string>
+    <string name="world">Мир:</string>
     <string name="toast_search">Данный функционал временно отсутствует</string>
     <string name="toast_nodata">Заполнены не все данные</string>
     <string name="toast_selectimage">Необходимо выбрать изображение</string>
