@@ -85,11 +85,7 @@ public class EditHero extends AppCompatActivity{
 
     public boolean isValid(EditText heroName, EditText heroRealName, EditText heroAbout) {
 
-        if (heroName.getText().toString().length()>0 && heroRealName.toString().length()>0 && heroAbout.toString().length()>0){
-            return true;
-        } else {
-            return false;
-        }
+        return heroName.getText().toString().length() > 0 && heroRealName.getText().toString().length() > 0 && heroAbout.getText().toString().length() > 0;
     }
 
     @Override

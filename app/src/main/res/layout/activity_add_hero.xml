@@ -81,7 +81,9 @@
                             android:layout_height="match_parent"
                             android:ems="10"
                             android:id="@+id/tvName"
-                            android:layout_gravity="center_horizontal" />
+                            android:layout_gravity="center_horizontal"
+                            android:nextFocusDown="@+id/tvRealName"
+                            android:singleLine="true"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -100,7 +102,9 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/tvRealName" />
+                            android:id="@+id/tvRealName"
+                            android:nextFocusDown="@+id/tvAboutInfo"
+                            android:singleLine="true"/>
 
                     </LinearLayout>
 
@@ -119,11 +123,13 @@
                         android:text="@string/about"
                         android:id="@+id/tvTitleAboutHero" />
 
+                    <!--how to autoresize?-->
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/tvAboutInfo"
-                        android:layout_gravity="center_horizontal" />
+                        android:layout_gravity="center_horizontal"
+                        android:inputType="textMultiLine" />
                 </LinearLayout>
 
                 <LinearLayout
